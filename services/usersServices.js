@@ -15,8 +15,7 @@ class usersServices {
 			Correo: data.Correo,
 			Direccion: data.Direccion,
 			Ciudad: data.Ciudad,
-			Celular: data.Celular,
-			WhatsApp: data.WhatsApp
+			Celular: data.Celular
 		}
 
 		if (!data) {

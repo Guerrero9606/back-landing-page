@@ -3,12 +3,11 @@ const joi = require('joi');
 const id = joi.string().hex();
 const Nombres = joi.string().min(3).max(50);
 const Apellidos = joi.string().min(3).max(50);
-const Cedula = joi.number().min(3).max(11);
+const Cedula = joi.number().min(3).max(5000000000);
 const Correo = joi.string().email();
 const Direccion = joi.string().min(3).max(50);
 const Ciudad = joi.string().min(3).max(20)
-const Celular = joi.number().min(10).max(10);
-const WhatsApp = joi.boolean();
+const Celular = joi.number().min(10).max(3600000000);
 
 const createUsersSchema = joi.object({
 	Nombres: Nombres.required(),
@@ -17,8 +16,7 @@ const createUsersSchema = joi.object({
 	Correo: Correo.required(),
 	Direccion: Direccion.required(),
 	Ciudad: Ciudad.required(),
-	Celular: Celular.required(),
-	WhatsApp: WhatsApp.required()
+	Celular: Celular.required()
 });
 
 const updateUsersSchema = joi.object({
@@ -28,8 +26,7 @@ const updateUsersSchema = joi.object({
 	Correo: Correo,
 	Direccion: Direccion,
 	Ciudad: Ciudad,
-	Celular: Celular,
-	WhatsApp: WhatsApp
+	Celular: Celular
 });
 
 const getUsersSchema = joi.object({
